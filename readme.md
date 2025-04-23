@@ -1,6 +1,6 @@
-# HDI_TCPConnection
+# HDI_TCPConnection-TCPListener
 
-Description (4D 20 R8)
+Description (4D 20 R9)
 
 Find more information on the [blog post](https://blog.4d.com/new-class-to-perform-tcp-connections).
 

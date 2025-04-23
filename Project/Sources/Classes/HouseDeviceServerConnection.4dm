@@ -1,8 +1,8 @@
-property listener : 4D:C1709.TCPListener
+property server : cs:C1710.HouseDeviceServer
 
-Class constructor($listener)
+Class constructor($server)
 	
-	This:C1470.listener:=$listener
+	This:C1470.server:=$server
 	
 	//Callback called when the connection is successfully established
 Function onConnection($connection : 4D:C1709.TCPConnection; $event : 4D:C1709.TCPEvent)
@@ -20,11 +20,11 @@ Function onData($connection : 4D:C1709.TCPConnection; $event : 4D:C1709.TCPEvent
 	
 	If ($text="Information")
 		var $blob : Blob
-		TEXT TO BLOB:C554(This:C1470.listener.information(); $blob; UTF8 text without length:K22:17)
+		TEXT TO BLOB:C554(This:C1470.server.information(); $blob; UTF8 text without length:K22:17)
 		$connection.send($blob)
 	Else 
 		If ($text="Activate")
-			This:C1470.listener.activate()
+			This:C1470.server.activate()
 		End if 
 	End if 
 	
